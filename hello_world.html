@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello World - PythonMaster</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/lesson.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.32.7/ace.js"></script>
+</head>
+<body>
+    <header class="navbar lesson-navbar">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+            <div class="breadcrumb">
+                <a href="learn.html">العودة للمسار</a>
+                <span class="separator">/</span>
+                <span class="current">برنامجك الأول: Hello World</span>
+            </div>
+            <div class="lesson-actions">
+                <a href="variables.html" class="btn btn-primary">الدرس التالي &larr;</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="lesson-layout">
+        <!-- Content Panel -->
+        <div class="content-panel">
+            <div class="lesson-content">
+                <h1>برنامجك الأول بلغة بايثون</h1>
+                <p>في عالم البرمجة، يوجد تقليد قديم وممتع: أول برنامج تكتبه بأي لغة جديدة يجب أن يطبع عبارة <strong>"Hello World"</strong> (مرحباً بالعالم) على الشاشة. يعتبر هذا بمثابة إعلان عن دخولك إلى عالم البرمجة، وأن إعدادات جهازك تعمل بشكل صحيح.</p>
+                
+                <h2>دالة الطباعة <code>print()</code></h2>
+                <p>الكمبيوتر لا يتحدث معنا تلقائياً. لكي نجعله يعرض لنا نتيجة أو رسالة، يجب أن نأمره بذلك صراحةً. في بايثون، نستخدم الدالة <code>print</code> لهذا الغرض.</p>
+                
+                <div class="explanation-box">
+                    <h3>كيف نكتبها؟</h3>
+                    <pre class="code-snippet"><code>print("Hello World!")
+print("أنا أتعلم بايثون")</code></pre>
+                </div>
+
+                <h3>تفصيل الكود (التشريح البرمجي):</h3>
+                <ul>
+                    <li><strong><code>print</code></strong> : هو اسم الأمر (الدالة). يجب أن يكتب بحروف صغيرة (lowercase). إذا كتبته <code>Print</code> بحرف كبير، سيعطيك الكمبيوتر خطأ لأنه حساس لحالة الأحرف.</li>
+                    <li><strong><code>()</code> الأقواس</strong> : هي بمثابة صندوق نضع فيه الشيء الذي نريد من الدالة أن تنفذه. بدونها لا تعمل الدالة.</li>
+                    <li><strong><code>" "</code> علامات التنصيص</strong> : تخبر بايثون أن ما بداخلها هو "نص حرفي" (String) وليس أمراً برمجياً آخر أو معادلة رياضية. يمكنك استخدام علامات تنصيص مفردة <code>' '</code> أو مزدوجة <code>" "</code>، كلاهما يعمل!</li>
+                </ul>
+
+                <h3>أخطاء شائعة للمبتدئين ⚠️</h3>
+                <p>عند بدايتك، قد تقع في بعض الأخطاء البسيطة التي تمنع الكود من العمل (وهذا طبيعي جداً!):</p>
+                <ul>
+                    <li>نسيان الأقواس: <code>print "Hello"</code> (هذا كان مسموحاً في نسخ بايثون القديمة جداً، أما الآن فهو خطأ).</li>
+                    <li>نسيان علامات التنصيص: <code>print(Hello)</code> (بايثون سيظن أن Hello هو اسم لمتغير وسيبحث عنه ولن يجده).</li>
+                    <li>اختلاف نوع علامات التنصيص: <code>print("Hello')</code> (يجب أن تبدأ وتنتهي بنفس النوع).</li>
+                </ul>
+
+                <hr>
+
+                <h2>تمرين عملي 🚀</h2>
+                <p>الآن جاء دورك لتطبيق ما تعلمته! قم بكتابة كود يطبع رسالة ترحيبية تقول "مرحباً بكم في بايثون".</p>
+                <ol>
+                    <li>استخدم الأمر <code>print</code> متبوعاً بالأقواس.</li>
+                    <li>اكتب الجملة داخل الأقواس بين علامتي تنصيص.</li>
+                    <li>اضغط على زر (تشغيل الكود) لرؤية النتيجة في الـ Console!</li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- Editor Panel -->
+        <div class="editor-panel">
+            <div class="editor-header">
+                <span class="editor-title">محرر بايثون</span>
+                <button id="runCodeBtn" class="btn btn-primary" style="padding: 0.25rem 1rem;">▶ تشغيل الكود</button>
+            </div>
+            <div id="codeEditor"># اكتب الكود الخاص بك هنا
+
+
+</div>
+            <div class="console-panel">
+                <div class="console-header">المخرجات (Console)</div>
+                <div id="consoleOutput" class="console-output"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        window.validateLesson = function(code, consoleOutput) {
+            if(code.includes('print(') && (code.includes('"') || code.includes("'"))) {
+                let match = code.match(/print\(['"](.*)['"]\)/);
+                if (match && match[1]) {
+                    consoleOutput.innerHTML = match[1] + "\n\n[نجاح] إجابة صحيحة! أحسنت عمل برنامجك الأول.";
+                } else {
+                    consoleOutput.innerHTML = "[خطأ] لم تقم بطباعة النص بشكل صحيح. تأكد من علامات التنصيص والمحتوى.";
+                    consoleOutput.classList.add('error');
+                }
+            } else if (code.trim() === "") {
+                 consoleOutput.innerHTML = "";
+            } else {
+                consoleOutput.innerHTML = "استخدم الدالة print() مع علامات التنصيص لطباعة النص.";
+                consoleOutput.classList.add('error');
+            }
+        };
+    </script>
+    <script src="js/lesson.js"></script>
+</body>
+</html>

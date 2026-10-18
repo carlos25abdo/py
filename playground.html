@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المحرر الحر - PythonMaster</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/lesson.css"> <!-- نستخدم نفس تنسيقات محرر الدرس -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.32.7/ace.js"></script>
+</head>
+<body style="overflow: hidden;">
+    <header class="navbar lesson-navbar">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+            <div class="breadcrumb">
+                <a href="index.html">الرئيسية</a>
+                <span class="separator">/</span>
+                <span class="current">المحرر الحر (Playground)</span>
+            </div>
+            <div class="lesson-actions">
+                <button id="runPlaygroundBtn" class="btn btn-primary">▶ تشغيل الكود</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="lesson-layout">
+        <!-- Editor Panel -->
+        <div class="editor-panel" style="flex: 1; height: calc(100vh - 70px);">
+            <div id="playgroundEditor" style="width: 100%; height: 60%; direction: ltr;"># المحرر الحر - جرب أي كود بايثون هنا
+print("أهلاً بك في عالم بايثون!")
+
+</div>
+            <div class="console-panel" style="height: 40%;">
+                <div class="console-header">المخرجات (Console)</div>
+                <div id="playgroundOutput" class="console-output"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/playground.js"></script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>القوائم (Lists) - PythonMaster</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/lesson.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.32.7/ace.js"></script>
+</head>
+<body>
+    <header class="navbar lesson-navbar">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+            <div class="breadcrumb">
+                <a href="learn.html">العودة للمسار</a>
+                <span class="separator">/</span>
+                <span class="current">القوائم (Lists)</span>
+            </div>
+            <div class="lesson-actions">
+                <a href="functions.html" class="btn btn-primary">الدرس التالي &larr;</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="lesson-layout">
+        <div class="content-panel">
+            <div class="lesson-content">
+                <h1>القوائم (Lists) - مستودع البيانات</h1>
+                <p>حتى الآن، كانت الصناديق (المتغيرات) التي ننشئها تتسع لقيمة واحدة فقط. تخيل أنك تبرمج لعبة وتريد تخزين أسماء 100 لاعب، هل ستنشئ 100 متغير (player1, player2... الخ)؟ هذا جنون برمجي! <br>الحل السحري هو <strong>القوائم (Lists)</strong>، وهي متغير واحد يعمل كقطار طويل مقسم إلى عربات، يمكن أن يحتوي على آلاف القيم داخله.</p>
+                
+                <h2>بناء القوائم وفهرستها (Indexing)</h2>
+                <p>لإنشاء قائمة نستخدم الأقواس المربعة <code>[]</code> ونفصل بين القيم بفاصلة <code>,</code>. ويمكن للقائمة أن تحتوي على نصوص وأرقام معاً!</p>
+                
+                <div class="explanation-box">
+                    <h3>كيف نصل لعنصر محدد في القطار؟</h3>
+                    <p>في البرمجة، العد دائماً يبدأ من <strong>الصفر (0)</strong> وليس الواحد! فالعربة الأولى رقمها 0.</p>
+                    <pre class="code-snippet"><code>fruits = ["تفاح", "موز", "برتقال"]
+print(fruits[0])  # سيطبع تفاح
+print(fruits[2])  # سيطبع برتقال
+print(fruits[-1]) # حركة ذكية في بايثون! تطبع آخر عنصر دائماً (برتقال)</code></pre>
+                </div>
+                
+                <h3>تعديل القوائم (Dynamic Lists)</h3>
+                <p>قوائم بايثون مرنة جداً (يمكن تكبيرها وتصغيرها في أي وقت أثناء عمل البرنامج):</p>
+                <ul>
+                    <li><strong><code>.append(item)</code></strong> : تضيف عنصراً جديداً في آخر القائمة. (من أهم وأكثر الدوال استخداماً).</li>
+                    <li><strong><code>.insert(index, item)</code></strong> : تضيف عنصراً في مكان محدد وتدفع الباقي للخلف.</li>
+                    <li><strong><code>.pop()</code></strong> : تحذف العنصر الأخير من القائمة وتستخرجه.</li>
+                    <li><strong><code>.remove(item)</code></strong> : تبحث عن عنصر بالاسم وتحذفه.</li>
+                </ul>
+
+                <hr>
+
+                <h2>تمرين عملي 🚀</h2>
+                <p>لديك قائمة <code>colors</code> تحتوي على لونين.</p>
+                <ol>
+                    <li>في السطر التالي، استخدم دالة <code>colors.append()</code> لإضافة اللون <code>"أزرق"</code> إلى القائمة.</li>
+                    <li>في السطر الذي يليه، اطبع القائمة بالكامل باستخدام <code>print(colors)</code> لتشاهد كيف تم تحديثها بنجاح.</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="editor-panel">
+            <div class="editor-header">
+                <span class="editor-title">محرر بايثون</span>
+                <button id="runCodeBtn" class="btn btn-primary" style="padding: 0.25rem 1rem;">▶ تشغيل الكود</button>
+            </div>
+            <div id="codeEditor">colors = ["أحمر", "أخضر"]
+# اكتب الكود هنا
+
+</div>
+            <div class="console-panel">
+                <div class="console-header">المخرجات (Console)</div>
+                <div id="consoleOutput" class="console-output"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        window.validateLesson = function(code, consoleOutput) {
+            if(code.includes('colors.append(') && code.includes('print(colors)')) {
+                consoleOutput.innerHTML = "['أحمر', 'أخضر', 'أزرق']\n\n[نجاح] ممتاز! القوائم أساسية جداً في البرمجة.";
+            } else {
+                consoleOutput.innerHTML = "تأكد من استخدام colors.append() لإضافة اللون، ثم استخدم دالة الطباعة.";
+                consoleOutput.classList.add('error');
+            }
+        };
+    </script>
+    <script src="js/lesson.js"></script>
+</body>
+</html>

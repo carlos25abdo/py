@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الجمل الشرطية (if, else) - PythonMaster</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/lesson.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.32.7/ace.js"></script>
+</head>
+<body>
+    <header class="navbar lesson-navbar">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+            <div class="breadcrumb">
+                <a href="learn.html">العودة للمسار</a>
+                <span class="separator">/</span>
+                <span class="current">الجمل الشرطية (if, else)</span>
+            </div>
+            <div class="lesson-actions">
+                <a href="elif.html" class="btn btn-primary">الدرس التالي &larr;</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="lesson-layout">
+        <div class="content-panel">
+            <div class="lesson-content">
+                <h1>الجمل الشرطية (if, else)</h1>
+                <p>البرامج الذكية ليست مجرد أوامر تتنفذ واحدة تلو الأخرى بشكل أعمى. البرامج الذكية تستطيع <strong>اتخاذ القرارات</strong> بناءً على البيانات. في الحياة اليومية أنت تفكر: "إذا كان الجو ممطراً، سآخذ مظلة، وإلا لن آخذها". هذا المنطق هو بالضبط ما نستخدمه في البرمجة عبر الجمل الشرطية!</p>
+                
+                <h2>كيف نكتب الشرط؟ (القاعدة الذهبية)</h2>
+                <p>نستخدم الكلمة <code>if</code> (التي تعني: إذا) متبوعة بالشرط الذي نريد اختباره، ثم نضع نقطتين رأسيتين <code>:</code>. <strong>هنا يأتي سحر بايثون:</strong> الأسطر التي تلي الشرط يجب أن تحتوي على مسافة بادئة (Indentation) لكي يفهم بايثون أن هذه الأسطر تابعة لهذا الشرط.</p>
+                
+                <div class="explanation-box">
+                    <h3>هيكل الشرط:</h3>
+                    <pre class="code-snippet"><code>age = 18
+
+if age >= 18:
+    # هذا السطر به مسافة بادئة، سينفذ فقط إذا تحقق الشرط
+    print("أنت شخص بالغ ومسموح لك بالدخول")
+else:
+    # كلمة else تعني (وإلا)
+    print("نأسف، أنت قاصر")</code></pre>
+                </div>
+
+                <h3>عوامل المقارنة (كيف نسأل؟):</h3>
+                <p>لكي نضع شرطاً، يجب أن نقارن بين قيمتين. إليك أهم المعاملات التي ستستخدمها يومياً:</p>
+                <ul>
+                    <li><strong><code>==</code> (يساوي):</strong> هل القيمة اليمنى تساوي اليسرى؟ (لاحظ أنها علامتين!! علامة <code>=</code> واحدة تعني حفظ البيانات في متغير، بينما <code>==</code> تعني سؤال أو مقارنة).</li>
+                    <li><strong><code>!=</code> (لا يساوي):</strong> هل القيمتان مختلفتان؟</li>
+                    <li><strong><code>&gt;</code> و <code>&lt;</code> :</strong> أكبر من وأصغر من (مثل الرياضيات).</li>
+                    <li><strong><code>&gt;=</code> و <code>&lt;=</code> :</strong> أكبر من أو يساوي / أصغر من أو يساوي.</li>
+                </ul>
+
+                <h3>أخطاء المسافة البادئة (IndentationError) ⚠️</h3>
+                <p>في لغات مثل C++ نستخدم الأقواس <code>{}</code> لتحديد بداية ونهاية الشرط. في بايثون نستخدم المسافات (عادة 4 مسافات). إذا نسيت وضع المسافة بعد <code>if</code>، سيرفض بايثون تشغيل الكود.</p>
+
+                <hr>
+
+                <h2>تمرين عملي 🚀</h2>
+                <p>أمامك كود لفحص درجة الطالب (المتغير <code>score</code>). قم بإكمال الكود بحيث:</p>
+                <ol>
+                    <li>تطبع الجملة <code>"ناجح"</code> إذا كانت النتيجة أكبر من أو تساوي 50.</li>
+                    <li>تطبع الجملة <code>"راسب"</code> في الحالات الأخرى (باستخدام else).</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="editor-panel">
+            <div class="editor-header">
+                <span class="editor-title">محرر بايثون</span>
+                <button id="runCodeBtn" class="btn btn-primary" style="padding: 0.25rem 1rem;">▶ تشغيل الكود</button>
+            </div>
+            <div id="codeEditor">score = 45
+
+# أكمل الكود أدناه
+if score >= 50:
+    
+else:
+    
+</div>
+            <div class="console-panel">
+                <div class="console-header">المخرجات (Console)</div>
+                <div id="consoleOutput" class="console-output"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        window.validateLesson = function(code, consoleOutput) {
+            if(code.includes('if') && code.includes('else:') && code.includes('print')) {
+                if (code.includes('score >= 50') || code.includes('score >=50')) {
+                    consoleOutput.innerHTML = "راسب\n\n[نجاح] ممتاز! لقد استخدمت الشرط بشكل صحيح لأن النتيجة كانت 45 وهي أقل من 50.";
+                } else {
+                    consoleOutput.innerHTML = "يوجد خطأ في شرط المقارنة، تأكد من استخدام >= 50";
+                    consoleOutput.classList.add('error');
+                }
+            } else {
+                consoleOutput.innerHTML = "تأكد من كتابة if و else بشكل صحيح مع وضع النقطتين (:) واستخدام دالة الطباعة.";
+                consoleOutput.classList.add('error');
+            }
+        };
+    </script>
+    <script src="js/lesson.js"></script>
+</body>
+</html>

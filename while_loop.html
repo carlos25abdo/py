@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>حلقة while - PythonMaster</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/lesson.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.32.7/ace.js"></script>
+</head>
+<body>
+    <header class="navbar lesson-navbar">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+            <div class="breadcrumb">
+                <a href="learn.html">العودة للمسار</a>
+                <span class="separator">/</span>
+                <span class="current">حلقة while</span>
+            </div>
+            <div class="lesson-actions">
+                <a href="learn.html" class="btn btn-primary">إنهاء المرحلة &larr;</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="lesson-layout">
+        <div class="content-panel">
+            <div class="lesson-content">
+                <h1>حلقة while (التكرار المشروط)</h1>
+                <p>تعلمنا أن حلقة <code>for</code> ممتازة إذا كنا نعرف كم مرة سنكرر الكود (مثل التكرار 10 مرات). ولكن، ماذا لو أردنا تكرار الكود <strong>إلى أن يحدث شيء معين؟</strong> (مثل: استمر في سؤال المستخدم عن الباسورد طالما أنه يدخله بشكل خاطئ). هنا تظهر قوة حلقة <strong><code>while</code></strong>.</p>
+                
+                <h2>كيف تعمل؟ (طالما أن...)</h2>
+                <p>كلمة <code>while</code> تعني (طالما). فالحلقة تقول للكمبيوتر: طالما أن هذا الشرط (True)، استمر في تنفيذ الكود داخلي دون توقف!</p>
+
+                <div class="explanation-box">
+                    <h3>مثال حي للعد التصاعدي:</h3>
+                    <pre class="code-snippet"><code>battery = 10
+
+while battery &lt; 15:
+    print("جاري الشحن... النسبة:", battery)
+    battery = battery + 1  # خطوة حاسمة جداً!
+    
+print("تم الشحن!")</code></pre>
+                </div>
+                
+                <h3>الكابوس المبرمج: الحلقة اللانهائية (Infinite Loop) 😱</h3>
+                <p>أكبر خطأ يقع فيه المبرمجون مع <code>while</code> هو نسيان تحديث المتغير داخل الحلقة. تخيل أنك لم تكتب السطر <code>battery = battery + 1</code> في المثال السابق. الشرط <code>battery < 15</code> سيظل صحيحاً للأبد! وسيعلق البرنامج ويستهلك موارد الجهاز حتى ينهار. <strong>دائماً تأكد من وجود سطر يغير الحالة نحو كسر الشرط لإنهاء الحلقة.</strong></p>
+
+                <hr>
+
+                <h2>تمرين عملي 🚀</h2>
+                <p>لنبنِ برنامجاً لعد تنازلي لإطلاق صاروخ!</p>
+                <ol>
+                    <li>لديك المتغير <code>count = 5</code>.</li>
+                    <li>اكتب حلقة <code>while</code> تعمل طالما أن المتغير <code>count</code> أكبر من الصفر.</li>
+                    <li>داخل الحلقة، اطبع <code>count</code>.</li>
+                    <li><strong>الخطوة الأهم:</strong> قم بتنقيص قيمة <code>count</code> بمقدار 1 في كل دورة لتجنب الحلقة اللانهائية (استخدم <code>count = count - 1</code>).</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="editor-panel">
+            <div class="editor-header">
+                <span class="editor-title">محرر بايثون</span>
+                <button id="runCodeBtn" class="btn btn-primary" style="padding: 0.25rem 1rem;">▶ تشغيل الكود</button>
+            </div>
+            <div id="codeEditor">count = 5
+# اكتب الكود هنا
+
+</div>
+            <div class="console-panel">
+                <div class="console-header">المخرجات (Console)</div>
+                <div id="consoleOutput" class="console-output"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        window.validateLesson = function(code, consoleOutput) {
+            if(code.includes('while') && (code.includes('count > 0') || code.includes('count>0')) && code.includes('print')) {
+                if (code.includes('count = count - 1') || code.includes('count -= 1')) {
+                    consoleOutput.innerHTML = "5\n4\n3\n2\n1\n\n[نجاح] مبروك! لقد أتقنت استخدام حلقة while بنجاح.";
+                } else {
+                    consoleOutput.innerHTML = "احذر! لم تقم بتنقيص المتغير count، مما قد يتسبب بحلقة لانهائية. استخدم count = count - 1";
+                    consoleOutput.classList.add('error');
+                }
+            } else {
+                consoleOutput.innerHTML = "تأكد من استخدام while مع الشرط count > 0 وطباعة المتغير.";
+                consoleOutput.classList.add('error');
+            }
+        };
+    </script>
+    <script src="js/lesson.js"></script>
+</body>
+</html>

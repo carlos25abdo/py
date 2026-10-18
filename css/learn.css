@@ -1,0 +1,92 @@
+.path-container {
+    padding: 3rem 1.5rem;
+    max-width: 800px;
+}
+
+.path-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.path-header h1 {
+    font-size: var(--font-size-3xl);
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.module-card {
+    background-color: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-md);
+    margin-bottom: 2rem;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+}
+
+.module-header {
+    background-color: var(--surface-hover);
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.module-header h2 {
+    font-size: var(--font-size-xl);
+}
+
+.module-status {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--border-radius-full);
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+}
+
+.lessons-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.lesson-item {
+    display: flex;
+    align-items: flex-start;
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+    transition: background-color var(--transition-fast);
+}
+
+.lesson-item:last-child {
+    border-bottom: none;
+}
+
+.lesson-item:hover {
+    background-color: rgba(55, 118, 171, 0.03);
+}
+
+.lesson-icon {
+    font-size: 1.5rem;
+    margin-left: 1.5rem;
+    background-color: var(--bg-color);
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 1px solid var(--border-color);
+}
+
+.lesson-details h3 {
+    font-size: var(--font-size-lg);
+    margin-bottom: 0.25rem;
+    color: var(--text-primary);
+}
+
+.lesson-details p {
+    margin: 0;
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+}

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>البرمجة الكائنية - PythonMaster</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/lesson.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.32.7/ace.js"></script>
+</head>
+<body>
+    <header class="navbar lesson-navbar">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+            <div class="breadcrumb">
+                <a href="learn.html">العودة للمسار</a>
+                <span class="separator">/</span>
+                <span class="current">البرمجة الكائنية (OOP)</span>
+            </div>
+            <div class="lesson-actions">
+                <a href="dicts.html" class="btn btn-primary">الدرس التالي &larr;</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="lesson-layout">
+        <div class="content-panel">
+            <div class="lesson-content">
+                <h1>البرمجة الكائنية (OOP) - هندسة البرمجيات</h1>
+                <p>عندما تكبر البرامج وتصبح معقدة (مثل الألعاب أو أنظمة البنوك)، تصبح الدوال والمتغيرات العادية غير كافية ويصبح الكود فوضوياً. هنا ننتقل إلى مرحلة الاحتراف: <strong>البرمجة الكائنية الموجهة (Object-Oriented Programming)</strong>. <br>الفكرة ببساطة هي: تمثيل وبرمجة الأشياء الحقيقية كـ (كائنات) داخل الكود!</p>
+                
+                <h2>مفهوم الفئة (Class) والكائن (Object)</h2>
+                <p>تخيل أنك مهندس سيارات. هل ستقوم ببناء كل سيارة من الصفر بوضع العجلات والمحرك بطريقة عشوائية؟ بالطبع لا! ستقوم برسم <strong>(مخطط هندسي - Blueprint)</strong> واحد يحدد أن كل سيارة يجب أن يكون لها 4 عجلات ومحرك ولون. <br>
+                - <strong>الفئة (Class):</strong> هي هذا المخطط الهندسي.<br>
+                - <strong>الكائن (Object):</strong> هو السيارة الحقيقية التي صنعتها بناءً على هذا المخطط (يمكنك صناعة آلاف السيارات المختلفة باللون من نفس المخطط).</p>
+                
+                <div class="explanation-box">
+                    <h3>كيف نترجم ذلك لبايثون؟</h3>
+                    <pre class="code-snippet"><code># 1. تصميم المخطط (الكلاس)
+class Car:
+    # دالة التهيئة: وظيفتها استقبال المواصفات عند التصنيع
+    def __init__(self, brand, color):
+        self.brand = brand  # صفة الماركة
+        self.color = color  # صفة اللون
+        
+    # يمكن للسيارة القيام بأفعال (Methods)
+    def start_engine(self):
+        print(f"السيارة {self.brand} اشتغلت! فرررم")
+
+# 2. إنشاء السيارات (الكائنات) من المخطط
+car1 = Car("تويوتا", "أبيض")
+car2 = Car("فيراري", "أحمر")
+
+# 3. التفاعل مع الكائنات
+print(car1.brand)    # سيطبع تويوتا
+car2.start_engine()  # سيطبع السيارة فيراري اشتغلت!</code></pre>
+                </div>
+                
+                <h3>الأسرار المهنية:</h3>
+                <ul>
+                    <li>دائماً تبدأ أسماء الفئات <code>class</code> بحرف كبير (مثل Car وليس car).</li>
+                    <li>كلمة <strong><code>self</code></strong> تعني (نفسي). تستخدم لكي يربط الكائن الصفات بنفسه فقط ولا يخلطها مع كائنات أخرى.</li>
+                    <li>الدالة <code>__init__</code> (بشرطتين سفليتين قبل وبعد) تسمى Constructor وتتنفذ تلقائياً عند ولادة الكائن.</li>
+                </ul>
+
+                <hr>
+
+                <h2>تمرين عملي 🚀</h2>
+                <p>لدينا قالب يسمى <code>Dog</code> يحتوي على دالة <code>bark()</code>.</p>
+                <ol>
+                    <li>قم بإنشاء نسخة (Object) من هذا القالب واسمها <code>my_dog</code> عن طريق مناداة <code>Dog()</code>.</li>
+                    <li>اجعل الكلب ينبح باستدعاء الدالة الخاصة به <code>my_dog.bark()</code>.</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="editor-panel">
+            <div class="editor-header">
+                <span class="editor-title">محرر بايثون</span>
+                <button id="runCodeBtn" class="btn btn-primary" style="padding: 0.25rem 1rem;">▶ تشغيل الكود</button>
+            </div>
+            <div id="codeEditor">class Dog:
+    def bark(self):
+        print("هوو هوو!")
+
+# قم بإنشاء my_dog هنا واستدعاء الدالة
+
+</div>
+            <div class="console-panel">
+                <div class="console-header">المخرجات (Console)</div>
+                <div id="consoleOutput" class="console-output"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        window.validateLesson = function(code, consoleOutput) {
+            if(code.includes('my_dog = Dog()') || code.includes('my_dog=Dog()')) {
+                if(code.includes('my_dog.bark()')) {
+                    consoleOutput.innerHTML = "هوو هوو!\n\n[نجاح] ممتاز جداً! لقد نجحت في تطبيق البرمجة الكائنية واستخدام الـ Objects.";
+                } else {
+                    consoleOutput.innerHTML = "قمت بإنشاء الكائن بنجاح، لكن لا تنسَ استدعاء الدالة my_dog.bark().";
+                    consoleOutput.classList.add('error');
+                }
+            } else {
+                consoleOutput.innerHTML = "تأكد من إنشاء الكائن بالاسم المطلوب بالشكل التالي: my_dog = Dog()";
+                consoleOutput.classList.add('error');
+            }
+        };
+    </script>
+    <script src="js/lesson.js"></script>
+</body>
+</html>

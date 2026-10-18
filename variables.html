@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المتغيرات (Variables) - PythonMaster</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/lesson.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.32.7/ace.js"></script>
+</head>
+<body>
+    <header class="navbar lesson-navbar">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+            <div class="breadcrumb">
+                <a href="learn.html">العودة للمسار</a>
+                <span class="separator">/</span>
+                <span class="current">المتغيرات (Variables)</span>
+            </div>
+            <div class="lesson-actions">
+                <a href="data_types.html" class="btn btn-primary">الدرس التالي &larr;</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="lesson-layout">
+        <!-- Content Panel -->
+        <div class="content-panel">
+            <div class="lesson-content">
+                <h1>المتغيرات (Variables)</h1>
+                <p>لكي يقوم أي برنامج بعمل مفيد، يجب أن يكون قادراً على حفظ البيانات وتذكرها لاستخدامها لاحقاً. هنا يأتي دور <strong>المتغيرات</strong>. تخيل أن المتغير هو <strong>صندوق صغير في ذاكرة الكمبيوتر</strong> تضع فيه معلومة (مثل اسمك، أو رصيدك في اللعبة)، وتكتب على هذا الصندوق اسماً لكي تستطيع استرجاع المعلومة في أي وقت.</p>
+                
+                <h2>كيف ننشئ متغيراً في بايثون؟</h2>
+                <p>في بعض لغات البرمجة الأخرى، إنشاء متغير يتطلب خطوات معقدة وتحديد نوعه مسبقاً. في بايثون الأمر في غاية البساطة: تكتب اسم المتغير، ثم علامة التساوي <code>=</code>، ثم القيمة التي تريد تخزينها.</p>
+                
+                <div class="explanation-box">
+                    <h3>أمثلة على متغيرات:</h3>
+                    <pre class="code-snippet"><code>player_name = "خالد"  # نخزن نصاً (نضعه بين علامات تنصيص)
+score = 50          # نخزن رقماً صحيحاً
+health = 99.5       # نخزن رقماً كسرياً
+
+# يمكننا الآن طباعة ما بداخل الصناديق:
+print(player_name)
+print(score)</code></pre>
+                </div>
+
+                <h3>قواعد وشروط تسمية المتغيرات:</h3>
+                <p>لا يمكنك تسمية الصناديق (المتغيرات) بأي شكل، هناك قواعد يجب الالتزام بها وإلا سيعطيك بايثون خطأ (Syntax Error):</p>
+                <ul>
+                    <li><strong>يجب أن يبدأ بحرف إنجليزي أو شرطة سفلية <code>_</code>.</strong> (أمثلة صحيحة: <code>name</code>، <code>_score</code>).</li>
+                    <li><strong>لا يمكن أن يبدأ برقم.</strong> (<code>1player</code> خطأ ❌، لكن <code>player1</code> صحيح ✅).</li>
+                    <li><strong>لا يمكن أن يحتوي على مسافات أو رموز خاصة.</strong> مثل <code>@</code> أو <code>-</code> (<code>my name</code> خطأ ❌، استبدل المسافة بشرطة سفلية <code>my_name</code> ✅).</li>
+                    <li><strong>حساس لحالة الأحرف:</strong> المتغير <code>Age</code> يختلف تماماً عن المتغير <code>age</code>.</li>
+                </ul>
+
+                <h3>تحديث قيمة المتغير (لماذا سمي "متغيراً"؟)</h3>
+                <p>سمي متغيراً لأن قيمته يمكن أن تتغير أثناء عمل البرنامج. انظر لهذا المثال:</p>
+                <pre class="code-snippet" style="background: #2a2a2a;"><code>level = 1
+print(level)  # سيطبع 1
+
+level = 2    # قمنا بتغيير محتوى الصندوق
+print(level)  # سيطبع 2 الآن</code></pre>
+
+                <hr>
+
+                <h2>تمرين عملي 🚀</h2>
+                <p>دعنا نختبر فهمك بإنشاء متغير خاص بك ثم طباعته:</p>
+                <ol>
+                    <li>قم بإنشاء متغير باسم <code>score</code>.</li>
+                    <li>قم بتعيين القيمة <code>100</code> لهذا المتغير (بدون علامات تنصيص لأنها أرقام).</li>
+                    <li>استخدم الدالة <code>print(score)</code> لطباعة ما بداخل المتغير.</li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- Editor Panel -->
+        <div class="editor-panel">
+            <div class="editor-header">
+                <span class="editor-title">محرر بايثون</span>
+                <button id="runCodeBtn" class="btn btn-primary" style="padding: 0.25rem 1rem;">▶ تشغيل الكود</button>
+            </div>
+            <div id="codeEditor"># اكتب الكود الخاص بك هنا
+score = 
+
+</div>
+            <div class="console-panel">
+                <div class="console-header">المخرجات (Console)</div>
+                <div id="consoleOutput" class="console-output"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        window.validateLesson = function(code, consoleOutput) {
+            if(code.includes('score = 100') && code.includes('print(score)')) {
+                consoleOutput.innerHTML = "100\n\n[نجاح] إجابة صحيحة! أحسنت.";
+            } else if (code.trim() === "") {
+                 consoleOutput.innerHTML = "";
+            } else {
+                consoleOutput.innerHTML = "لم يتم طباعة القيمة المطلوبة.\nحاول التأكد من إنشاء المتغير score وطباعته باستخدام print()";
+                consoleOutput.classList.add('error');
+            }
+        };
+    </script>
+    <script src="js/lesson.js"></script>
+</body>
+</html>
